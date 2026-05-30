@@ -1,36 +1,92 @@
-# dx's Partial Differential Equations
+# dx 的数学物理方程
 
-## Preface
+## 序
 
-This book has the feeling of a real study battlefield. PDEs are not mastered only by calmly reading definitions; they are gradually opened through lectures, homework, review, exam pressure, and repeated calculation.
+这本书带着一种很强的“战斗感”。
 
-Wave equations, heat equations, d'Alembert's formula, separation of variables, Green identities, maximum principles, and energy methods are familiar names, but the order of attack can easily become confused in actual problems.
+我说的不是那种故意把内容写得很紧张的战斗感，而是一种很真实的学习现场感: 这门课不是坐在那里慢慢欣赏就能完全掌握的，它往往是在课堂、作业、复习、期末压力和一遍遍重算里，被一点点打通的。波动方程、热传导方程、达朗贝尔公式、分离变量法、格林公式、极值原理、能量法，这些名字单看都很熟，可一旦落到题里，顺序一乱，人就很容易跟着一起乱。
 
-## Why This Book Is Written This Way
+所以这本书从一开始，就不是那种只追求叙述平滑的课本式整理。它更像一份真正在题里打出来的作战手册。
 
-The hard part of this course is often not pure ignorance, but disorder. A reader may know several methods but not know which one to use first.
+## 为什么我想这样写这本书
 
-The notes therefore preserve many direct reminders about procedure: write the standard formula first, proceed step by step, identify the type of problem, then decide whether to use separation of variables, an energy method, an influence region, or a boundary formula.
+因为我越来越觉得，数学物理方程这门课真正难的地方，往往不只是“不会”，而是“乱”。
 
-## What This Book Keeps
+很多时候你并不是完全不懂某个方法，而是在题目面前不知道该先拿出哪一种方法，也不知道每一步到底是为了什么。于是书里那些我特别舍不得删的句子，几乎都在做同一件事: 替读者把下手顺序先稳住。比如“先正常求解”“先把标准公式写出来”“一定要一点一点算”“先列能量公式，最后的目的是看对时间求导以后是不是小于等于零”。这些话听起来很朴素，可我恰恰觉得它们最像这门课真正有用的部分。
 
-The first chapter centers on the wave equation: derivation, conditions, d'Alembert's formula, propagation, and higher-dimensional Cauchy problems. The second part moves into heat conduction, separation of variables, maximum principles, heat kernels, and Green formulas.
+因为一旦顺序对了，很多题其实并没有那么可怕。你知道什么时候该先写通解，什么时候该把边界条件补进来，什么时候该先看影响区域，什么时候该用分离变量，什么时候该拿能量法证明唯一性和稳定性。数学物理方程里很多方法表面上差别很大，但它们之所以能被人用顺，靠的往往不是背得全，而是下手时脑子里那条线有没有清楚。
 
-Homework solutions, compressed review notes, and exam-oriented summaries are part of the structure rather than secondary material. They show how the theory is actually used.
+## 这本书的来路与气质
 
-## Intended Readers
+这本书有很明显的“从课内长出来”的痕迹。
 
-This book is for readers who feel disorganized when facing PDE problems. Its goal is to build an internal order: classify the problem, stabilize the method, then calculate.
+它不是只写一条最正式的理论主线，而是把课堂笔记、作业解析、压缩复习、考前提炼都放在了一起。于是你会在这里同时看到完整推导、方法框架、题型提示、考试重点，甚至会看到一些非常直接的提醒，比如“老师说的重点”“最后要看的作业”“分离变量法必记公式”。我反而很喜欢这种不假装纯粹的样子，因为这正是这门课真正被学会的方式: 理论从来不是孤立生长的，它总是在例题、作业和复习里反复被重新理解。
 
-## Overall Roadmap
+也正因为这样，这本书的气质不像一本文风很平整的教材，更像一个人确实在这门课里跌跌撞撞地走过，然后把自己摸出来的路标都留给了后面的人。
 
-Following MIT linear PDE courses, PDE study centers on the heat equation, wave equation, and Laplace equation, with core techniques such as well-posed problems, separation of variables, eigenfunction expansions, and Green's functions. This repository is organized around wave equations, heat conduction, and harmonic functions.
+## 这本书里想保住什么
 
+它当然有清楚的主线。
+
+第一章围绕波动方程展开，从方程导出、定解条件、达朗贝尔公式、波的传播到高维柯西问题。第二章进入热传导方程、分离变量法、极值原理、热核公式与格林公式。除此之外，还有大量和课程节奏紧密相连的文件，比如 `第一章作业解析.tex`、`第二章作业.tex`、`期末笔记.tex`、`填空会考什么.tex`、`作业最后需要看的.tex`。
+
+但如果只把这些文件看成“补充材料”，那就太可惜了。因为这本书真正想保住的，不只是知识点的覆盖，而是做题时那种逐层推进的方法感。很多地方你会发现，真正重要的不是某一步算出来了，而是你知道为什么这里先这样做，而不是那样做。
+
+## 我想把它写给谁
+
+我想把它写给正在这门课里手忙脚乱的人。
+
+如果你常常有这种感觉: 内容我都见过，可题目一来，脑子像一下子散开，不知道是该先写通解、先分离变量、先看边界条件，还是先找能量，那这本书就是写给你的。它很想帮你建立的，并不是“所有题都立刻会做”的幻觉，而是一套更稳的内部顺序。
+
+如果你已经学过一遍，再回来翻它，可能会更容易感受到这本书的价值。因为第二遍看时，你会发现书里最有力量的并不是那些最终答案，而是那些把方法钉住的短句。它们像是一套你以后做题时会越来越依赖的内部口令。
+
+## 最后
+
+如果这本书最后能让你在面对一道数学物理方程题时，不再第一反应就是慌，而是先把问题分门别类，先稳住顺序，再决定用什么方法；如果它能让你慢慢觉得，这门课不是一团互不相干的技巧，而是一套围绕“定解问题、传播、分解、稳定性”展开的方法体系；如果它能让你在考试压力之外，也真正看见这门课内部的结构之美，那么这本书就已经达到了我最想让它达到的样子。
+
+## 整体规划
+
+参考 MIT 线性偏微分方程课程的口径：PDE 以热方程、波方程、Laplace 方程为基本对象，重点是定解问题、分离变量、特征函数展开和 Green 函数等求解技术；本仓库围绕波动方程、热传导和调和函数展开。
+
+```text
+数学物理方程 = 用偏微分方程描述空间和时间中的变化
+│
+├── 这门课要解决的问题
+│   ├── 物理过程怎样变成方程？
+│   │   └── 从弦振动、热传导、调和场中写出 PDE 和定解条件
+│   ├── 给定初值边值后怎样求解？
+│   │   └── 用达朗贝尔公式、分离变量、Fourier 方法和 Green 函数
+│   └── 解是否唯一、稳定、有什么传播性质？
+│       └── 用能量不等式、极值原理、渐近性和惠更斯原理理解解的行为
+│
+├── 工具一  定解问题  →  方程 + 初值 + 边值
+│   ├── 方程的导出        从物理守恒或几何结构得到 PDE
+│   ├── 定解条件          明确初始状态和边界约束
+│   └── 适定性            关心解的存在、唯一和稳定
+│
+├── 工具二  波动方程  →  传播与振动
+│   ├── 弦振动方程        一维波动模型的来源
+│   ├── 达朗贝尔公式      显式表达波的左右传播
+│   ├── 分离变量法        把空间和时间拆开求解
+│   ├── 高维柯西问题      用球平均法、降维法处理高维波
+│   └── 能量不等式        控制解的唯一性和稳定性
+│
+├── 工具三  热传导方程  →  扩散与平滑
+│   ├── 热方程导出        从扩散和守恒得到模型
+│   ├── 初边值问题        用分离变量和 Fourier 展开求解
+│   ├── 柯西问题          用热核公式描述全空间扩散
+│   └── 极大值原理        从最大最小值控制解
+│
+└── 工具四  调和函数  →  平衡态与边值问题
+    ├── Laplace / Poisson 思想  描述稳定后的空间分布
+    ├── Green 公式              把体内信息和边界信息联系起来
+    └── Green 函数              为边值问题构造表示公式
 ```
 
-## Repository Notes
+## 仓库说明
 
-- The main entry is `main.tex`.
-- The main files cover wave equations, heat conduction, homework analysis, review notes, and exam-oriented material.
-- A compiled PDF is also kept in the repository.
-- For local compilation, running `xelatex main.tex` twice is usually enough.
+- 主文件是 `main.tex`。
+- 主线文件包括 `第一章笔记.tex`、`第二章热传导.tex`、`第一章作业解析.tex`、`第二章作业.tex`、`期末笔记.tex`。
+- 复习压缩版和题目导向材料在 `填空会考什么.tex`、`纯作业.tex`、`作业最后需要看的.tex`。
+- 仓库中还保留了 `东邪的数学物理方程.pdf` 作为成品输出。
+- 若需要本地编译，通常运行 `xelatex main.tex` 两次即可。
